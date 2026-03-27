@@ -1,0 +1,105 @@
+---
+title: Onboarding
+description: A walkthrough of the 3-step setup flow that configures your study plan before you reach the dashboard.
+---
+
+When you sign in for the first time, LC Tracker runs a short onboarding flow to configure your study plan. The three steps take about two minutes and can all be changed later from **Settings**.
+
+<Steps>
+  <Step title="Connect LeetCode and pick a learning mode">
+    ## LeetCode username (optional)
+
+    Enter your LeetCode username and click **Connect** to let LC Tracker fetch your recent accepted submissions. Matched problems are auto-marked as solved in your Problem Library so you are not re-assigned problems you have already done.
+
+    <Note>
+      LeetCode's public API only exposes your most recent accepted submissions. Problems you solved a long time ago may not appear. You can mark older solves manually from the Problem Library at any time.
+    </Note>
+
+    You can skip this step and add your username later under **Settings → LeetCode sync**.
+
+    ## Learning mode
+
+    Choose how LC Tracker sequences new problems for you:
+
+    <AccordionGroup>
+      <Accordion title="What is Sprint mode?">
+        Sprint mode focuses you on one problem category at a time (for example, Two Pointers or Binary Search) before moving on to the next. You work through a structured sprint of problems in that category, then advance. This mirrors the NeetCode-style approach and is well suited to learners who want systematic, pattern-by-pattern coverage.
+      </Accordion>
+      <Accordion title="What is Random mode?">
+        Random mode mixes problems across all categories in each session. You will not be locked into a single category sprint. This is useful if you want broader variety day-to-day or if you are already partway through your prep and want to maintain coverage across topics simultaneously.
+      </Accordion>
+      <Accordion title="Can I switch later?">
+        Yes. Go to **Settings → Learning Strategy** to toggle between Sprint and Random at any time. Switching does not reset your progress.
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="Set skill levels per category">
+    LC Tracker uses your self-reported skill level for each problem category to calibrate which problems to surface first and how aggressively to introduce new material.
+
+    For each category (for example, Arrays, Sliding Window, Trees, Dynamic Programming), choose one of three levels:
+
+    | Level | Meaning |
+    |---|---|
+    | **Not familiar** | You have little to no experience with this pattern. LC Tracker will start from the easiest problems and build up gradually. |
+    | **Some exposure** | You have seen or attempted problems in this category but are not confident. LC Tracker will introduce problems at a moderate pace. |
+    | **Comfortable** | You can solve most problems in this category reliably. LC Tracker will skip easy introductory problems and prioritize review and harder variants. |
+
+    <Tip>
+      Be honest with your skill ratings. Overrating yourself leads to problems that are too hard too soon; underrating means you spend time on problems you have already mastered. You can adjust skill levels at any time in **Settings → Skill levels**.
+    </Tip>
+
+    <AccordionGroup>
+      <Accordion title="What if I skip a category?">
+        Any category you leave unrated defaults to **Not familiar**, which is the safest starting point. LC Tracker will introduce the category from the beginning.
+      </Accordion>
+      <Accordion title="How do skill levels affect the daily plan?">
+        Skill levels influence which problems are queued as "new" each day. A category rated Comfortable will contribute fewer new problems (since you are assumed to need less ramp-up time), while Not familiar categories get a slower, more deliberate introduction. Spaced-repetition reviews are scheduled independently of skill level once a problem has been solved.
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="Launch">
+    The final step shows a summary of your choices — learning mode and LeetCode connection status — along with a few quick tips before you launch.
+
+    At launch, LC Tracker commits your settings and takes you to the Dashboard with your first Daily Plan ready.
+
+    <AccordionGroup>
+      <Accordion title="What are the default study schedule settings?">
+        If you skip detailed schedule configuration during onboarding, LC Tracker uses these defaults:
+
+        - **Weekday budget**: 60 minutes per day
+        - **Weekend budget**: 120 minutes per day
+        - **Rest day**: Sunday (day index 0)
+        - **Blackout dates**: none
+
+        You can customize all of these under **Settings → Study schedule**.
+      </Accordion>
+      <Accordion title="What other settings use defaults?">
+        The following settings are not part of onboarding and start from sensible defaults that you can adjust in Settings at any time:
+
+        - **Target company tier**: Mixed (covers FAANG, fintech, and general companies)
+        - **Interview type**: Internship
+        - **Preferred language**: Python
+        - **Spaced-repetition aggressiveness**: Relaxed (longer intervals between reviews)
+        - **Sprint settings**: Strict mode on, standard sprint length
+      </Accordion>
+      <Accordion title="What counts as a daily streak?">
+        Your streak increments when you complete at least one problem or review session on a given calendar day. You get one grace day per week — if you miss a day, the streak is preserved as long as you have not already used your grace day that week.
+      </Accordion>
+      <Accordion title="Can I export my data?">
+        Yes. Go to **Settings** and use the **Export JSON** option to download a full backup of your progress, history, and settings at any time.
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+</Steps>
+
+## Re-running onboarding
+
+You can revisit and change any onboarding setting at any time — you do not need to re-run the full flow. All individual settings are available in the **Settings** tab:
+
+- LeetCode username: **Settings → LeetCode sync**
+- Learning mode: **Settings → Learning Strategy**
+- Skill levels: **Settings → Skill levels**
+- Study schedule: **Settings → Study schedule**
+- Target company, interview type, language, and more: **Settings → Plan Customization**

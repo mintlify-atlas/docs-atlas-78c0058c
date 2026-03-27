@@ -1,0 +1,102 @@
+---
+title: "Study schedule"
+description: "Configure your daily time budget, rest day, and blackout dates to keep your plan realistic and sustainable."
+---
+
+Your study schedule tells LC Tracker how much time you have available each day and when you are not studying at all. The daily plan uses this information to cap the number of problems assigned to you, pace your sprint progress against your interview date, and skip days you have blocked out.
+
+## Time budgets
+
+LC Tracker maintains separate time budgets for weekdays and weekends because most people have different availability across the week.
+
+| Setting | Default | Range |
+|---|---|---|
+| Weekday daily target | 60 min | 15–120 min (15 min steps) |
+| Weekend daily target | 120 min | 15–120 min (15 min steps) |
+
+The daily plan estimates how long each assigned problem will take — based on difficulty and your historical solve times — and stops adding problems once the total would exceed your budget. Review problems are prioritized over new problems when time is tight.
+
+<Tip>
+  Start with a time budget you can hit on a bad day, not your best day. Consistently finishing your plan builds a streak and momentum. You can always do bonus problems from the problem library if you have extra time.
+</Tip>
+
+## Rest day
+
+Your rest day is one day per week where LC Tracker does not assign new problems. You can choose any day of the week — or set it to **None** to study every day.
+
+The default rest day is **Sunday**.
+
+On the rest day, only spaced repetition reviews that are due will appear in your plan. New problems and sprint advancement are paused until the following day.
+
+<Note>
+  Your rest day does not break your streak. As long as you complete any due reviews on that day (or skip it entirely if you have none), your streak continues uninterrupted.
+</Note>
+
+## Blackout dates
+
+Blackout dates are date ranges where LC Tracker suspends all study activity — no new problems, no reviews, and no streak requirements. Use them for vacations, exam periods, or any block of time when you know you will not be studying.
+
+Blackout dates affect pacing projections: the plan treats blacked-out days as if they do not exist when estimating whether you will finish before your interview date.
+
+### Adding a blackout date
+
+<Steps>
+  <Step title="Open Settings">
+    Navigate to **Plan Customization** from the sidebar.
+  </Step>
+  <Step title="Scroll to Study Schedule">
+    Find the **Blackout Dates** section under Study Schedule.
+  </Step>
+  <Step title="Enter the date range">
+    Click the **start date** field and pick the first day of your blackout period. Then click the **end date** field and pick the last day.
+  </Step>
+  <Step title="Add the range">
+    Click the **+** button to save the blackout range. It appears in the list immediately below the inputs.
+  </Step>
+</Steps>
+
+To remove a blackout date, click the **✕** icon next to the range in the list.
+
+<Note>
+  Blackout dates take effect immediately. If today falls within a blackout range, your dashboard will reflect an empty plan for the day.
+</Note>
+
+## Target interview date
+
+Your target interview date is the anchor for all pacing calculations. LC Tracker divides the remaining problems across the remaining available days (excluding the rest day and any blackout dates) to determine whether you are on track.
+
+You can update your target interview date at any time from Settings without losing any progress.
+
+## Target events
+
+Target events are named milestones you add to mark specific interview stages for a company. They give LC Tracker a more granular timeline to pace against.
+
+Each event has three fields:
+
+| Field | Description | Examples |
+|---|---|---|
+| Title | Company or event name | `Google`, `Meta Phone Screen` |
+| Type | Stage of the interview process | OA, Phone Screen, Onsite, Other |
+| Date | Date of the event | Any future date |
+
+Events appear on the dashboard in chronological order. Pacing warnings take the earliest upcoming event into account, not just the final target interview date.
+
+## How the time budget affects your daily plan
+
+The daily planner assigns problems in this order:
+
+1. Due spaced repetition reviews (highest priority)
+2. The sprint's new problem for today (Sprint Mode) or the next problem in the pool (Random Mode)
+3. Additional new problems if time remains
+
+Each step checks whether adding the next problem would exceed your daily time budget. If it would, the planner stops. This means a smaller time budget results in fewer problems per day, which extends the number of days needed to complete the problem set.
+
+<Tip>
+  If your pacing projection shows you finishing late, consider increasing your weekday or weekend time budget before reducing your target interview date. Even adding 15 minutes per weekday adds over an hour of capacity each week.
+</Tip>
+
+## How blackout dates affect pacing
+
+Pacing projections subtract blacked-out days from the available study calendar before calculating your daily problem rate. For example, if you have 60 study days remaining but 7 of them are blacked out, the planner uses 53 days for its estimate.
+
+If you add or remove blackout dates after pacing has been calculated, the dashboard projection updates immediately on the next page load.

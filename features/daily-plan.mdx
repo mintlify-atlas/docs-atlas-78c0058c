@@ -1,0 +1,78 @@
+---
+title: Daily plan
+description: Understand how the Daily Plan builds your study session each day, respects your time budget, and adjusts for missed days.
+---
+
+The Daily Plan is the main view in LC Tracker. Every time you open the app, it builds a focused session for you based on your current progress, time budget, and spaced repetition schedule — no manual planning required.
+
+## Sections in your daily plan
+
+<CardGroup cols={2}>
+  <Card title="Today's Focus" icon="bullseye" href="/features/daily-plan#todays-focus">
+    One new problem from your active sprint category or random queue.
+  </Card>
+  <Card title="Spaced repetition reviews" icon="rotate" href="/features/spaced-repetition">
+    Previously solved problems due for re-attempt, sorted by weakness and overdue time.
+  </Card>
+  <Card title="Cold Solve Challenge" icon="snowflake" href="/features/daily-plan#cold-solve-challenge">
+    A problem you haven't touched in 30+ days, surfaced with no hints.
+  </Card>
+  <Card title="Syntax Drills" icon="book-open" href="/features/syntax-reference">
+    Flashcards from the Syntax Reference that are due for review today.
+  </Card>
+</CardGroup>
+
+## How the time budget works
+
+LC Tracker schedules only as much work as fits within your daily study budget. You set weekday and weekend minute targets in Settings. The plan estimates time for each item based on your personal average solve times (or difficulty-based defaults until you have 3+ sessions of data).
+
+If more reviews are due than your budget allows, the weakest and most overdue problems are shown first, and the rest are deferred to future days.
+
+## Day Mode
+
+You can adjust the intensity of today's session with Day Mode, which you set from the sidebar:
+
+| Mode | Effect |
+|------|--------|
+| **NORMAL** | Standard plan: one new problem + reviews within budget |
+| **EASY** | Lighter load: reviews only, no new problem |
+| **HARD** | Expanded load: additional problems are added to push pace |
+
+Day Mode resets daily so you choose it fresh each session.
+
+## Catch-Up banner
+
+If you miss 2 or more consecutive study days, a Catch-Up banner appears at the top of the Daily Plan. You choose how to respond:
+
+- **Extend Timeline** — pushes your target date out to match the days you missed, keeping your daily load the same
+- **Catch Up Faster** — keeps your target date fixed and adds extra problems per session to recover pace
+
+You can dismiss the banner without choosing either option if you prefer to ignore the missed days.
+
+## Session timer
+
+The timer in the dashboard header tracks total time you've spent studying today, combining all completed sessions plus any currently active session in real time. It displays hours, minutes, and seconds so you can stay aware of your daily investment.
+
+<Note>
+  The skip button on Today's Focus replaces the problem with the next candidate in your queue. In Sprint Mode, skips stay within the current sprint category so your drill focus is preserved. In Random Mode, skips pull from the full unsolved list.
+</Note>
+
+## How to use the daily plan effectively
+
+<Steps>
+  <Step title="Check Day Mode">
+    If today is a heavier or lighter day for you, set Day Mode before starting. This takes 2 seconds and shapes the entire session.
+  </Step>
+  <Step title="Start Today's Focus first">
+    Tackle the new problem while your mind is fresh. Use the Play button to start the session timer and open the problem on LeetCode.
+  </Step>
+  <Step title="Work through reviews">
+    After the new problem, go through each review. Rate yourself honestly — your rating directly affects when you see the problem next.
+  </Step>
+  <Step title="Do the Cold Solve if it appears">
+    Cold Solves train recall under real conditions. Treat it like a mini-mock: no hints, your own pace.
+  </Step>
+  <Step title="Complete Syntax Drills">
+    Syntax Drills take roughly 2 minutes per card. Completing them keeps your SR schedule for syntax current and prevents a backlog.
+  </Step>
+</Steps>

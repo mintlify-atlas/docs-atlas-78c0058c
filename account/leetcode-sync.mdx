@@ -1,0 +1,69 @@
+---
+title: LeetCode sync
+description: Import your solved problem history from LeetCode so LC Tracker knows which problems you've already completed.
+---
+
+The LeetCode sync feature reads your accepted submission history from your public LeetCode profile and marks those problems as already solved in LC Tracker's Problem Library. This means you won't be assigned problems you've already done, and your progress starts from where you actually are.
+
+<Warning>
+  Your LeetCode profile must be **public** for sync to work. LC Tracker reads your submission history through LeetCode's public API — it cannot access private profiles. To make your profile public, go to your LeetCode account settings and set your profile visibility to public.
+</Warning>
+
+## Setting up sync
+
+<Steps>
+  <Step title="Open Settings">
+    Click **Settings** (the gear icon) in the LC Tracker navigation.
+  </Step>
+  <Step title="Find the LeetCode Integration section">
+    The **LeetCode Integration** section is at the top of the Settings page.
+  </Step>
+  <Step title="Enter your LeetCode username">
+    Type your LeetCode username into the input field. This is the username shown in your LeetCode profile URL — for example, if your profile is `leetcode.com/u/neetcode`, your username is `neetcode`.
+  </Step>
+  <Step title="Click the sync button">
+    Click the refresh icon button next to the username field. LC Tracker will fetch your recent accepted submissions from LeetCode.
+  </Step>
+  <Step title="Wait for confirmation">
+    A green confirmation message appears when sync completes, showing the timestamp of the last sync and how many new problems were added. For example: *Last synced: 3/27/2026 (12 new added)*.
+  </Step>
+</Steps>
+
+## What gets imported
+
+The sync fetches your **20 most recent accepted submissions** from LeetCode. For each submission, LC Tracker records:
+
+- The problem title and slug (used to match against the Problem Library)
+- The submission timestamp
+- The programming language used
+- The acceptance status
+
+Matched problems are marked as solved in your Problem Library. They'll count toward your progress and won't be re-assigned as new problems.
+
+## Running sync again
+
+You can re-sync at any time by returning to **Settings → LeetCode Integration** and clicking the refresh button again. This is useful after you've solved more problems on LeetCode and want to pull in the new completions.
+
+Sync always fetches the most recent 20 accepted submissions. Problems already imported on a previous sync are not duplicated.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Sync shows an error message">
+    If a red error message appears below the username field, the sync request failed. Common causes:
+
+    - **Wrong username** — double-check that the username matches exactly what appears in your LeetCode profile URL.
+    - **Private profile** — your LeetCode profile must be set to public. Visit your LeetCode account settings and update your profile visibility.
+    - **LeetCode API unavailable** — LeetCode's API can occasionally be slow or temporarily unavailable. Wait a few minutes and try again.
+    - **Network issue** — LC Tracker uses a proxy to reach LeetCode's API. If your network blocks external requests, sync may fail.
+  </Accordion>
+  <Accordion title="Sync succeeds but problems don't appear as solved">
+    LC Tracker matches synced problems against its own Problem Library by problem slug. If a problem you've solved on LeetCode isn't in the LC Tracker library, it won't be marked as solved — the library covers a curated problem set, not all of LeetCode.
+  </Accordion>
+  <Accordion title="Only some of my solved problems were imported">
+    The sync fetches your 20 most recent accepted submissions. If you've solved more than 20 problems since the last sync (or on first sync), only the most recent 20 will be pulled in. Run sync again periodically to stay up to date, or manually mark older problems as solved from the Problem Library.
+  </Accordion>
+  <Accordion title="The sync button is disabled">
+    The sync button is disabled when the username field is empty. Enter your LeetCode username before clicking the button.
+  </Accordion>
+</AccordionGroup>

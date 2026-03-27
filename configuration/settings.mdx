@@ -1,0 +1,146 @@
+---
+title: "Settings"
+description: "Configure your study plan, coding language, company target, and more from the Plan Customization page."
+---
+
+The **Plan Customization** page (accessible from the sidebar) is where you control every aspect of how LC Tracker builds your daily plan. All changes save automatically to your account.
+
+<CardGroup cols={2}>
+  <Card title="Study schedule" icon="clock" href="/configuration/study-schedule">
+    Set weekday and weekend time budgets, your rest day, and blackout date ranges
+  </Card>
+  <Card title="Learning modes" icon="swords" href="/configuration/learning-modes">
+    Choose between Sprint Mode and Random Mode, and configure sprint length and aggressiveness
+  </Card>
+  <Card title="LeetCode sync" icon="rotate" href="/account/leetcode-sync">
+    Connect your LeetCode username to import completed problems
+  </Card>
+  <Card title="Data export" icon="download" href="#export-backup">
+    Download a full JSON backup of your progress, settings, and sprint state
+  </Card>
+</CardGroup>
+
+## Settings reference
+
+The table below lists every configurable setting, its default value, and available options.
+
+| Setting | Default | Options |
+|---|---|---|
+| LeetCode username | — | Any valid LeetCode handle |
+| Target interview date | 2026-09-15 | Any future date |
+| Company tier | `MIXED` | `FAANG`, `FINTECH`, `GENERAL`, `MIXED` |
+| Interview type | `INTERNSHIP` | `INTERNSHIP`, `FULL_TIME` |
+| Coding language | `Python` | `Python`, `Java`, `JavaScript` |
+| Learning mode | `SPRINT` | `SPRINT`, `RANDOM` |
+| Sprint discipline | Strict | Strict, Flexible |
+| Sprint target days | `7` | 3–14 days |
+| SR aggressiveness | `RELAXED` | `RELAXED`, `AGGRESSIVE` |
+| Weekday daily target | `60` min | 15–120 min (15 min steps) |
+| Weekend daily target | `120` min | 15–120 min (15 min steps) |
+| Rest day | Sunday | Sunday–Saturday, or None |
+| Blackout dates | None | Date ranges |
+
+## LeetCode integration
+
+Enter your LeetCode username and click the sync button to import your solved problems. LC Tracker marks any problem you have already solved as completed, so your plan reflects real progress from day one.
+
+After a successful sync, the timestamp and number of newly added problems appear below the input. If the sync fails, an error message explains what went wrong.
+
+<Note>
+  Sync is manual — LC Tracker does not poll LeetCode in the background. Click the sync button whenever you solve problems outside the app.
+</Note>
+
+## Target company tier
+
+The company tier adjusts the Easy / Medium / Hard ratio in your daily plan. A visual bar under the selector shows the exact breakdown.
+
+| Tier | Easy | Medium | Hard | Best for |
+|---|---|---|---|---|
+| **FAANG** | 20% | 60% | 20% | Big Tech (Google, Meta, Amazon…) |
+| **FINTECH** | 30% | 60% | 10% | Stripe, Amex, Robinhood… |
+| **GENERAL** | 50% | 45% | 5% | General SWE roles |
+| **MIXED** | 33% | 34% | 33% | Balanced, undecided |
+
+## Interview type
+
+Choose **Internship** or **Full Time** to calibrate the difficulty expectations in your plan.
+
+- **Internship** — Introduces easier warmup problems earlier in the plan. Suitable if you are preparing for a summer or co-op role.
+- **Full Time** — Uses the full difficulty range from the start. Suitable for new-grad or experienced-hire roles.
+
+## Coding language
+
+Setting your preferred language applies it everywhere in LC Tracker — including the Mock Interview IDE, solution hints, and syntax drills. You can change it at any time without losing progress.
+
+Supported languages: **Python**, **Java**, **JavaScript**.
+
+## Learning mode
+
+LC Tracker offers two ways to progress through the NeetCode 75/150 problem set. See [Learning modes](/configuration/learning-modes) for a full comparison.
+
+- **Sprint Mode** — Focus on one problem category at a time. Complete all problems in the category before advancing to the next. Recommended for most users.
+- **Random Mode** — Problems are drawn from the full pool in order, with no category restriction. Good for breadth-first exploration.
+
+## Sprint settings
+
+These options are only active when **Sprint Mode** is selected.
+
+### Sprint discipline
+
+- **Strict** — New problems are locked to the active sprint category. No category mixing until the sprint ends.
+- **Flexible** — Allows one free-pick per week from any category, while still following the sprint structure overall.
+
+### Sprint target days
+
+Sets the number of days allocated to each sprint. The slider ranges from **3 days (Fast)** to **14 days (Deep)**, with **7 days** as the balanced default. Shorter sprints accelerate your timeline; longer sprints allow more repetition before moving on.
+
+See [Learning modes — Sprint settings](/configuration/learning-modes#sprint-settings) for how `targetDays` interacts with `lengthMultiplier`.
+
+### Jump to sprint category
+
+The **Jump to Sprint Category** dropdown lets you manually advance to any Phase 1 or Phase 2 category. This resets progress within that category and restarts the sprint timer.
+
+<Warning>
+  Jumping to a category resets your in-progress sprint for that category. Use this to recover from an accidental skip, not to bypass the sprint check.
+</Warning>
+
+## Spaced repetition aggressiveness
+
+Controls how soon solved problems resurface for review. See [Learning modes — SR aggressiveness](/configuration/learning-modes#sr-aggressiveness) for details.
+
+- **Relaxed** — Longer intervals between reviews. Recommended for beginners or when studying months ahead of an interview.
+- **Aggressive** — Shorter intervals with more frequent re-testing. Useful when your interview is weeks away.
+
+## Study schedule
+
+Set how much time you have available on weekdays and weekends, designate a rest day, and block out periods where no study is expected (vacations, exams, and so on). See [Study schedule](/configuration/study-schedule) for a full explanation of how these settings affect your daily plan.
+
+## Skill levels
+
+During onboarding you rate your familiarity with each problem category: **Not familiar**, **Some exposure**, or **Comfortable**. LC Tracker uses these ratings to seed the spaced repetition scheduler — categories you marked as comfortable start with longer review intervals.
+
+You can update skill levels at any time from the Settings page. Changes take effect on your next daily plan.
+
+## Interview timeline
+
+Add named interview milestones to track your preparation against real deadlines. Each event has a title, a type, and a date.
+
+Supported event types: **OA** (online assessment), **Phone Screen**, **Onsite**, **Other**.
+
+Events appear on the dashboard and in pacing calculations, so LC Tracker can warn you if your current pace puts you at risk of not finishing before a milestone.
+
+## Export backup
+
+Click **Export Data** to download a timestamped JSON file containing:
+
+- All user settings
+- Problem progress and history
+- Activity log
+- Session timings
+- Sprint state and sprint history
+
+The file is named `lc-tracker-backup-YYYY-MM-DD.json`. You can use it as an offline backup or to migrate your data between environments.
+
+<Note>
+  Exported data is not automatically re-imported. If you need to restore from a backup, contact support.
+</Note>

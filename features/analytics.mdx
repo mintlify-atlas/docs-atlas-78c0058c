@@ -1,0 +1,128 @@
+---
+title: "Analytics"
+description: "A dedicated view of your progress — problem stats, category performance, session history, activity heatmap, and sprint records all in one place."
+keywords: ["analytics", "progress", "heatmap", "session history", "category performance", "sprint history", "solve time"]
+---
+
+The **Analytics** tab gives you a full picture of your prep progress across every dimension LC Tracker tracks. It's separate from the Dashboard — while the Dashboard focuses on what to do today, Analytics answers the question: how am I actually doing over time?
+
+Open Analytics by clicking the **Analytics** tab in the top navigation.
+
+## At a glance
+
+<CardGroup cols={2}>
+  <Card title="Total solved" icon="trophy">
+    The total number of problems you've solved at least once. Broken down into problems still in your review queue and problems you've mastered and retired.
+  </Card>
+  <Card title="NeetCode 75 progress" icon="bullseye">
+    How many of the 75 core NeetCode problems you've completed, shown as a count and percentage with a progress bar.
+  </Card>
+  <Card title="Time invested" icon="timer">
+    Total time spent in timed sessions (new solves, reviews, cold solves, and mocks), formatted in hours or minutes.
+  </Card>
+  <Card title="Active sprint" icon="swords">
+    When a sprint is in progress, a banner shows the current category, which day of the sprint you're on, and overall completion percentage.
+  </Card>
+</CardGroup>
+
+## Pattern insights
+
+LC Tracker automatically generates insights from your confidence data across categories:
+
+- **Needs Work** — shown when a category's average confidence is below 2.0/3. Prompts you to prioritize foundational problems there.
+- **Developing** — shown for categories between 2.0 and 2.5, suggesting a focus on time complexity optimization.
+- **Strong** — shown when your best category hits 2.5 or above, confirming where you've built solid mastery.
+
+Insights appear as soon as you have enough rating data. The more problems you rate, the more actionable they become.
+
+## Activity heatmap
+
+The heatmap shows 365 days of activity as a grid, styled like a GitHub contribution graph. Each cell represents one day. Color intensity is based on combined solve and review count for that day:
+
+| Activity | Color |
+|---|---|
+| None | Dark grey |
+| 1–2 problems | Faint green |
+| 3–4 problems | Medium green |
+| 5–6 problems | Bright green |
+| 7+ problems | Vivid green with glow |
+
+Two vertical markers appear on the heatmap:
+- **Today** (green dashed line)
+- **Target date** (indigo dashed line, labeled with your Phase 1 deadline)
+
+Hover any cell to see the exact date and problem count.
+
+## Category performance
+
+<Accordion title="Confidence bars">
+  Each category you've worked in gets a horizontal bar showing your average confidence rating (1–3) across all problems in that category. The bar color maps directly to confidence level:
+
+  - Red — below 1.5 (struggling)
+  - Amber — 1.5 to 2.4 (developing)
+  - Green — 2.5 and above (strong)
+
+  Categories are sorted weakest-first so your most actionable gaps appear at the top.
+</Accordion>
+
+<Accordion title="Average solve time">
+  Next to each confidence bar, you'll see the average solve time for new and cold-solve sessions in that category, shown in minutes. If your solve time is trending down (last half of sessions faster than first half), a downward arrow indicator appears in green.
+
+  Solve times only include `new` and `cold_solve` session types — reviews and mocks are excluded to keep the measurement honest.
+</Accordion>
+
+<Accordion title="Loading older timings">
+  The analytics view loads your most recent 90 days of session timings automatically. If you want category performance data to reflect your full history, click **Load older timings** in the top-right corner of the Category Performance section. This fetches earlier sessions in batches of 500 and merges them into the view.
+</Accordion>
+
+## Session history
+
+The session history table lists every problem session you've recorded, sorted by most recent first. Each row shows:
+
+- **Problem** — the problem title, with a trophy icon if this session was a personal best time
+- **Category** — the problem's topic category
+- **Date** — timestamp formatted as `MMM D, h:mm a`
+- **Time · Type** — elapsed time and the session type (`new`, `review`, `cold`, or `mock`)
+- **Confidence** — your self-rated confidence: Mastered (3), Okay (2), or Struggled (1)
+- **Code** — a **View** button if you used the in-app editor during that session
+
+<Accordion title="Viewing past code">
+  When you complete a mock interview or any session using the in-app editor, LC Tracker stores your submitted code. Click **View** in the Code column to open a side-by-side code viewer showing:
+
+  - **Past attempt** — your code from that session
+  - **Optimal solution** — the reference solution LC Tracker stores for the problem
+
+  The viewer also shows elapsed time and approach similarity rating if available. Code is displayed with syntax highlighting using CodeMirror.
+</Accordion>
+
+<Accordion title="Load more sessions">
+  By default, the session history table shows your 5 most recent sessions. If you have more sessions, a **Show all N sessions** button appears below the table. Click it to expand the full history. Click **Show less** to collapse it back.
+</Accordion>
+
+## Sprint history
+
+The Sprint Schedule section shows every Phase 1 category sprint in order. Each row includes:
+
+- **Category name** with a completion indicator (filled circle = done, pulsing dot = active, empty ring = upcoming)
+- **Duration** — how many days the sprint lasted
+- **Status** — `Passed` (emerald) or `Extended` (amber)
+
+Below the schedule, a sprint history table shows your completed sprints with:
+
+| Column | Description |
+|---|---|
+| Category | The topic category |
+| Duration | Sprint length in days |
+| Avg Solve | Average solve time across sessions in that sprint |
+| Result | Passed or Extended |
+
+The Sprint Schedule section moves to the top of the page (just below the stat cards) when a sprint is active, so it's always visible during an active sprint.
+
+## Activity log
+
+The activity log underlies both the heatmap and the pacing calculations. Each entry records two counts per day:
+
+- `solved` — problems you completed as new solves
+- `reviewed` — problems you completed as spaced repetition reviews
+
+Both counts contribute to streak tracking and the activity heatmap. Only `solved` counts contribute to pacing calculations.

@@ -1,0 +1,65 @@
+---
+title: Mock interviews
+description: Simulate a live coding interview with a timed session, in-app Python editor, and a structured self-evaluation rubric.
+---
+
+The Mock Interview tab simulates the pressure of a real technical interview. You get a randomly selected problem, a countdown timer, and a structured self-evaluation at the end. Results are logged to your problem history so they factor into your Interview Readiness score.
+
+## Starting a mock interview
+
+<Steps>
+  <Step title="Choose your filters">
+    Select a difficulty level (Easy, Medium, Hard, or Random) and optionally narrow by category. These filters determine which problem you'll receive.
+  </Step>
+  <Step title="Choose your mode">
+    Leave the **Open in LeetCode instead** option unchecked to use the in-app editor (Python, no autocomplete). Check it to open the problem in a new LeetCode tab instead.
+  </Step>
+  <Step title="Start the interview">
+    Click **Start Mock Interview**. A random problem matching your filters is selected and the countdown begins. The time limit is **25 minutes** for in-app editor problems and **35 minutes** for external LeetCode mode.
+  </Step>
+  <Step title="Solve the problem">
+    Write your solution in the in-app editor (or on LeetCode). The timer turns amber at 10 minutes remaining and red at 5 minutes remaining. You can pause the timer or end early by clicking **I'm done**.
+  </Step>
+  <Step title="Complete self-evaluation">
+    After time expires or you click I'm done, rate yourself on three criteria and submit your result.
+  </Step>
+</Steps>
+
+## Self-evaluation rubric
+
+After each mock interview you answer three questions:
+
+1. **Did you solve the problem optimally?** — Did your solution pass with correct time and space complexity?
+2. **Was your syntax clean and bug-free?** — Could you have submitted it without syntax errors?
+3. **Could you explain time and space complexity clearly?** — Did you understand the complexity of your solution?
+
+For problems with in-app editor content, a fourth question appears:
+
+4. **How similar was your approach to the optimal solution?** — Rate 1 (different approach), 2 (same pattern), or 3 (identical).
+
+Your responses are combined into a rating that is logged with `sessionType: 'mock'` and contributes to the Mock Performance component of your Interview Readiness score.
+
+## In-app editor mode
+
+The in-app editor is a split-screen interface:
+- **Left panel** — problem statement, examples, and constraints
+- **Right panel** — CodeMirror Python editor (autocomplete disabled to simulate a real interview)
+
+When time expires, the right panel shows the optimal solution side-by-side with your code so you can compare approaches.
+
+<Warning>
+  In-app editor mode is only available for problems marked **Mock Only** in the Problem Library. These reserved problems have a full problem statement, examples, constraints, and optimal solution. If no reserved problems match your filters, you must use the LeetCode mode.
+</Warning>
+
+## LeetCode mode
+
+If you check **Open in LeetCode instead**, the problem opens in a new browser tab and the session is marked as externally solved. The timer still runs so you can track time, and the self-evaluation rubric appears at the end.
+
+## How results are logged
+
+Each mock interview session is stored in your problem history with:
+- The problem ID and session type (`mock`)
+- Your elapsed time and time limit
+- Whether you used the in-app editor
+- Your approach similarity rating (if applicable)
+- Your overall performance rating (derived from your self-evaluation answers)

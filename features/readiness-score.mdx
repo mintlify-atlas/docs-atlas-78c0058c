@@ -1,0 +1,125 @@
+---
+title: "Readiness score"
+description: "A 0–100 score on your dashboard estimating how prepared you are for technical interviews, based on your progress, confidence, review health, mock performance, and solve speed."
+keywords: ["readiness score", "interview readiness", "preparation score", "confidence", "spaced repetition health", "mock score"]
+---
+
+The readiness score is a single number from 0 to 100 shown on your dashboard. It's calculated from five components that together reflect the full picture of your interview prep — not just how many problems you've solved, but how well you know them, how consistently you're reviewing, and how your speed is trending.
+
+<Note>
+  The score updates in real time as you complete sessions and reviews. You don't need to do anything to recalculate it — it's always current.
+</Note>
+
+## Score breakdown
+
+| Component | Max points | What it measures |
+|---|---|---|
+| Phase progress | 30 | NeetCode 75 completion percentage |
+| Confidence | 25 | Average self-rated confidence across all problems |
+| SR health | 20 | Ratio of non-overdue problems in your review queue |
+| Mock performance | 15 | Average confidence rating in mock interview sessions |
+| Syntax | 10 | Average confidence across syntax drill topics |
+| Speed bonus | 5 | Solve time improvement over your last 20 vs. first 20 sessions |
+| **Total** | **105** | Capped at 100 |
+
+## How each component is calculated
+
+### Phase progress (max 30 pts)
+
+```
+phaseScore = (NeetCode75Solved / 75) * 30
+```
+
+This component grows linearly as you work through the 75 core problems. Solving all 75 gives you the full 30 points.
+
+### Confidence (max 25 pts)
+
+```
+confidenceScore = (avgConfidence / 3.0) * 25
+```
+
+After each session you rate your confidence 1, 2, or 3. LC Tracker takes the most recent rating for every problem you've touched and averages them. A perfect average of 3.0 gives you the full 25 points.
+
+### SR health (max 20 pts)
+
+```
+srHealthScore = (1 - overdueRatio) * 20
+overdueRatio = overdueProblems / totalActiveProblems
+```
+
+If all your active problems are reviewed on time, you get 20 points. Every overdue problem reduces this score. Retiring a problem removes it from the denominator, so retiring well-mastered problems can actually improve your SR health.
+
+### Mock performance (max 15 pts)
+
+```
+mockScore = (avgMockRating / 3.0) * 15
+```
+
+Only sessions where you submitted code in the in-app editor count here. The score is the average confidence rating across all such sessions. This component rewards using the mock interview feature consistently.
+
+### Syntax (max 10 pts)
+
+```
+syntaxScore = (avgSyntaxRating / 3.0) * 10
+```
+
+Your average confidence across all syntax drill topics in the Syntax Reference. This starts at 0 if you haven't touched the syntax drills.
+
+### Speed bonus (max 5 pts)
+
+LC Tracker compares the average elapsed time of your first 20 timed sessions against your last 20 timed sessions. If your recent average is at least 20% faster:
+
+```
+speedBonusScore = 5  (full bonus)
+```
+
+For improvements between 0% and 20%, the bonus scales proportionally. You need at least 20 total timed sessions for this component to activate.
+
+## Readiness messages
+
+A message below the score gives you a plain-language summary of where you stand:
+
+| Score range | Message |
+|---|---|
+| 0–39 | Just getting started. Keep building your foundation. |
+| 40–59 | Building momentum. Focus on consistency and weak areas. |
+| 60–79 | Solid progress. Good for phone screens, push harder for onsites. |
+| 80–100 | Highly prepared. Ready for onsite interviews. |
+
+## How to improve each component
+
+<Accordion title="How do I improve my phase progress score?">
+  Solve more NeetCode 75 problems. This is the highest-weight component, so consistent daily progress has the biggest impact on your total score.
+
+  <Tip>Use Sprint mode to work through categories systematically rather than picking problems at random. Completing a sprint advances you through multiple NeetCode 75 problems at once.</Tip>
+</Accordion>
+
+<Accordion title="How do I improve my confidence score?">
+  Rate yourself honestly after every session. If you're consistently rating problems 1 (Struggled), focus on those weak categories by solving foundational problems and reviewing the optimal solution before moving on.
+
+  <Tip>Avoid rating problems 3 (Mastered) prematurely. An inflated confidence score will lower your SR health score when those problems inevitably come back overdue.</Tip>
+</Accordion>
+
+<Accordion title="How do I improve my SR health score?">
+  Keep up with your daily review queue. Every time you skip a scheduled review, that problem becomes overdue and reduces this component. The SR health score is the most volatile — it can drop quickly if you miss several days.
+
+  <Tip>If you have a large backlog of overdue problems, work through them systematically by category rather than trying to clear them all at once. Retiring problems you've genuinely mastered (three consecutive ratings of 3) also helps.</Tip>
+</Accordion>
+
+<Accordion title="How do I improve my mock performance score?">
+  Complete mock interview sessions using the in-app code editor. Only sessions with submitted code count. Focus on problems where you previously struggled, and use the side-by-side code review after each session to identify gaps.
+
+  <Tip>Even one or two mock sessions per week will build this component quickly if you're rating honestly.</Tip>
+</Accordion>
+
+<Accordion title="How do I improve my syntax score?">
+  Visit the Syntax Reference and work through flashcard drills for your target language. Rate your confidence for each syntax topic as you go. This component has the lowest weight but is entirely within your control with a short daily practice session.
+
+  <Tip>Focus on syntax patterns that come up most often in LeetCode problems: list comprehensions, dictionary operations, sorting with custom keys, and string manipulation.</Tip>
+</Accordion>
+
+<Accordion title="How do I earn the speed bonus?">
+  The speed bonus activates automatically once you have 20 or more timed sessions. At that point, LC Tracker compares your earliest 20 sessions to your most recent 20. Keep solving problems under a timer — your speed naturally improves with practice.
+
+  <Tip>Use cold-solve sessions to measure your true unassisted speed. Cold solves count toward the timing average alongside new solves.</Tip>
+</Accordion>

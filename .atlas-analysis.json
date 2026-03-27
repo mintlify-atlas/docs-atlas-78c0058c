@@ -1,0 +1,89 @@
+{
+  "projectType": "saas",
+  "projectName": "LC Tracker",
+  "projectDescription": "A full-stack LeetCode prep and progress tracker with spaced repetition, sprint-based study plans, mock interviews, analytics, and cross-device sync.",
+  "theme": "almond",
+  "primaryColor": "#10b981",
+  "lightColor": "#34d399",
+  "darkColor": "#059669",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "getting-started/quickstart",
+              "getting-started/onboarding"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/daily-plan",
+              "features/spaced-repetition",
+              "features/sprints",
+              "features/problem-library",
+              "features/mock-interviews",
+              "features/syntax-reference"
+            ]
+          },
+          {
+            "group": "Analytics & Progress",
+            "pages": [
+              "features/analytics",
+              "features/readiness-score",
+              "features/streaks-and-pacing"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/settings",
+              "configuration/study-schedule",
+              "configuration/learning-modes"
+            ]
+          },
+          {
+            "group": "Account & Data",
+            "pages": [
+              "account/authentication",
+              "account/leetcode-sync",
+              "account/data-and-privacy"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Spaced repetition scheduling for LeetCode problems",
+    "Sprint-based structured study with category focus",
+    "Daily plan generation with time estimates",
+    "Mock interview mode with in-app code editor",
+    "Syntax flashcard drills (Python, Java, JavaScript)",
+    "Progress analytics with mastery trends and charts",
+    "Interview readiness score (0–100)",
+    "LeetCode username sync for submission history",
+    "Streak tracking with grace day support",
+    "Cross-device sync via Supabase + Clerk auth",
+    "Catch-up plan when study days are missed",
+    "Cold solve challenges for retention testing"
+  ],
+  "publicApiSurface": [
+    "useProblemProgress() — log, review, and query problem progress",
+    "useUserSettings() — read and update study settings",
+    "useSprintState() — manage sprint categories and history",
+    "useSessionTimings() — track solve times per category",
+    "useSyntaxProgress() — flashcard confidence ratings",
+    "useActivityLog() — daily solve/review activity",
+    "useStreak() — current and max streak state",
+    "buildDailyPlan() — compute today's recommended problems",
+    "computeReviewProblems() — time-budget-aware review queue",
+    "AppSettings — user configuration schema",
+    "ProblemProgress — per-problem SR state and history",
+    "SprintState — active sprint category and status"
+  ]
+}

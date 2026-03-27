@@ -1,0 +1,72 @@
+---
+title: Spaced repetition
+description: Learn how LC Tracker schedules problem reviews using spaced repetition, what each rating means, and how problems get retired.
+---
+
+Every problem you solve is automatically added to the spaced repetition (SR) queue. LC Tracker schedules your reviews using a spacing algorithm that adjusts intervals based on how well you performed — so you spend more time on problems you struggle with and less on ones you've mastered.
+
+## How the algorithm works
+
+When you finish a problem, you rate your performance on a scale of 1 to 3. That rating determines when you'll see the problem again.
+
+The next review date also accounts for:
+- **Difficulty** — Easy problems back off quickly (longer gaps); Hard problems stay closer together
+- **Consecutive successes** — the more times in a row you rate 2 or 3, the longer the next interval
+- **SR aggressiveness setting** — AGGRESSIVE mode applies a 0.7× multiplier to all intervals, making reviews come back sooner
+
+<AccordionGroup>
+  <Accordion title="What happens when I rate a problem 1?">
+    Rating 1 means you struggled. The problem is scheduled to come back in **2 days**, regardless of difficulty. Your `consecutiveSuccesses` counter resets to zero, which compresses future intervals.
+  </Accordion>
+  <Accordion title="What happens when I rate a problem 2?">
+    Rating 2 means you solved it but needed hints or effort. The interval depends on how many consecutive successes you have:
+    - **First ever solve (0 previous successes)**: 3 days
+    - **1st consecutive success**: ~4 days (adjusted for difficulty)
+    - **2nd consecutive success**: ~14 days
+    - **3rd+ consecutive successes**: ~45 days
+
+    Your `consecutiveSuccesses` count increases by 1 each time you rate ≥ 2.
+  </Accordion>
+  <Accordion title="What happens when I rate a problem 3?">
+    Rating 3 means you solved it cleanly and confidently. The interval is extended by 25% on top of the rating 2 interval as a reward. Your `consecutiveThrees` count also increments, which contributes toward eventual retirement.
+  </Accordion>
+</AccordionGroup>
+
+## Retirement
+
+A problem is retired when you've demonstrated lasting mastery. Two conditions must both be true:
+
+1. You've rated the problem ≥ 2 enough times in a row to cross the difficulty threshold:
+   - **Easy** — 2 consecutive successes (rating ≥ 2)
+   - **Medium** — 4 consecutive successes
+   - **Hard** — 6 consecutive successes
+2. You've rated the problem 3 at least **2 times total** (`consecutiveThrees ≥ 2`)
+
+Both conditions must be met simultaneously. This prevents retirement from a streak of rating-2 solves alone — you need to have demonstrated confident mastery at least twice.
+
+Retired problems no longer appear in your review queue. They show a solid checkmark in the Problem Library.
+
+## The review queue
+
+Each day, LC Tracker selects the reviews that fit within your time budget. If more problems are due than your budget allows, the queue is prioritized by:
+1. Most overdue (furthest past their due date)
+2. Weakest performance (lowest last rating)
+
+Deferred reviews remain in the queue and surface again the next day.
+
+## Cold Solve
+
+A Cold Solve is a special review that appears in the Daily Plan when a problem hasn't been touched in 30 or more days. It's treated as a fresh solve — no hints, no review context — to test whether the pattern has stuck in your long-term memory. Cold Solve sessions are logged separately from regular reviews.
+
+## SR aggressiveness setting
+
+You can change how aggressively reviews are scheduled in Settings under **SR Aggressiveness**:
+
+| Setting | Behavior |
+|---------|----------|
+| **RELAXED** (default) | Standard intervals — good for building sustainable habits |
+| **AGGRESSIVE** | All intervals reduced by 30% — higher review volume, faster reinforcement |
+
+<Tip>
+  Start with RELAXED if you're new to spaced repetition. Switch to AGGRESSIVE only if your review backlog is consistently low and you want to accelerate before an interview.
+</Tip>

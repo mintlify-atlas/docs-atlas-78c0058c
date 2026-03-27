@@ -1,0 +1,90 @@
+---
+title: Data and privacy
+description: What data LC Tracker stores, how to export it, how to send feedback, and where to find the Privacy Policy.
+---
+
+<Note>
+  All data described on this page is tied to your account and synced via Supabase. It is only accessible to you — no other user can view or modify your data.
+</Note>
+
+## What data is stored
+
+LC Tracker stores the following data on your behalf to power your study plan, spaced-repetition schedule, and analytics.
+
+<AccordionGroup>
+  <Accordion title="Problem progress">
+    For each problem you interact with, LC Tracker stores:
+
+    - `firstSolvedAt` — when you first marked the problem as solved
+    - `lastReviewedAt` — the date of your most recent review session
+    - `nextReviewAt` — when the problem is next scheduled for review (calculated by the spaced-repetition algorithm)
+    - `reviewCount` — how many times you've reviewed the problem
+    - `history` — a log of past review ratings
+    - `retired` — whether you've removed the problem from future review cycles
+    - `notes` — any personal notes you've written on the problem
+  </Accordion>
+  <Accordion title="Session timings">
+    Each practice or review session records:
+
+    - Elapsed time in seconds
+    - The problem category
+    - Your difficulty rating for the session
+    - The session type (new problem, review, mock interview, etc.)
+  </Accordion>
+  <Accordion title="Sprint state and history">
+    If you use Sprint Mode, LC Tracker tracks your current sprint category, progress within that sprint, and a history of completed sprints including their start and end dates.
+  </Accordion>
+  <Accordion title="Activity log">
+    Daily counts of problems solved and problems reviewed, used to power your streaks, heatmap, and pacing analytics.
+  </Accordion>
+  <Accordion title="Settings">
+    Your full app configuration is stored per account, including:
+
+    - Study schedule (weekday/weekend targets, rest day, blackout dates)
+    - Target company tier and interview type
+    - Learning mode (Sprint or Random) and sprint settings
+    - Spaced-repetition aggressiveness
+    - Preferred programming language
+    - Target interview events
+  </Accordion>
+  <Accordion title="Syntax card progress">
+    For each syntax reference card, LC Tracker stores your confidence rating and the number of times you've reviewed it.
+  </Accordion>
+  <Accordion title="LeetCode username">
+    If you've connected your LeetCode account, your LeetCode username is stored so LC Tracker can re-sync your submission history on demand.
+  </Accordion>
+</AccordionGroup>
+
+## Exporting your data
+
+You can download a full copy of your data at any time from **Settings → Export Backup**. Clicking **Export Data** generates a JSON file named `lc-tracker-backup-YYYY-MM-DD.json` and saves it to your downloads folder.
+
+The export includes:
+
+- All problem progress records
+- Session timings
+- Activity log
+- Sprint state and sprint history
+- All app settings
+
+This file is a complete snapshot of your account data and can be used as an offline backup.
+
+## Sending feedback
+
+The **Feedback** button in the app opens a form where you can send bug reports, feature requests, or general comments directly to the LC Tracker team.
+
+To submit feedback:
+
+1. Click **Feedback** in the app.
+2. Select the type: **Feature Request**, **Bug Report**, or **General Feedback**.
+3. Write your message.
+4. Optionally attach a screenshot (JPG, PNG, or WebP, up to 5 MB).
+5. Click **Send Feedback**.
+
+You'll see a confirmation message once your feedback is submitted.
+
+## Privacy Policy
+
+The full Privacy Policy is accessible from the sign-in page footer at [lc-tracker.app/privacy](https://lc-tracker.app/privacy). It covers what data is collected, how it is used, and how to request deletion of your account and data.
+
+For data deletion requests or privacy questions, contact [alesio1610@gmail.com](mailto:alesio1610@gmail.com).

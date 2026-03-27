@@ -1,0 +1,133 @@
+---
+title: "Learning modes"
+description: "Choose between Sprint Mode and Random Mode, and tune SR aggressiveness and sprint length to match your interview timeline."
+---
+
+LC Tracker offers two modes for progressing through the NeetCode 75 and NeetCode 150 problem sets. Your choice of mode affects which problems appear in your daily plan, how the sprint check works, and how quickly you cycle through categories.
+
+<Note>
+  You can switch between modes at any time from [Settings](/configuration/settings). Your progress is preserved — switching modes does not reset solved problems or review schedules.
+</Note>
+
+<Tabs>
+  <Tab title="Sprint Mode">
+    Sprint Mode focuses you on one problem category at a time. You work through all problems in the active category before taking a sprint check and advancing to the next.
+
+    - Problems in your daily plan come exclusively from the active sprint category (Strict discipline) or mostly from it (Flexible discipline)
+    - The sprint ends when all category problems are solved and a sprint check problem is passed
+    - Sprint length is controlled by `targetDays` and `lengthMultiplier`
+    - Recommended for most users preparing for technical interviews
+  </Tab>
+  <Tab title="Random Mode">
+    Random Mode draws problems from the entire NeetCode 75/150 pool in sequence, without restricting to any single category.
+
+    - No category lock — each day's new problem comes from the next unsolved problem in the full list
+    - No sprint check is required to advance
+    - Sprint-specific settings (`strictMode`, `targetDays`, `lengthMultiplier`) are inactive
+    - Good for users who prefer broad coverage over deep category focus
+  </Tab>
+</Tabs>
+
+## Sprint Mode in depth
+
+### Sprint structure
+
+Each sprint covers one problem category (for example, **Arrays & Hashing** or **Dynamic Programming**). The sprint runs for up to `targetDays` days. At the end of the sprint, LC Tracker presents a **sprint check** — a timed problem from the category. Passing the check advances you to the next category. Failing extends the sprint.
+
+Categories are organized into two phases:
+
+- **Phase 1** — NeetCode 75 categories, covering foundational patterns
+- **Phase 2** — Expanded NeetCode 150 categories, covering advanced patterns
+
+You advance from Phase 1 to Phase 2 automatically after completing all Phase 1 sprints with sufficient confidence.
+
+### Sprint discipline
+
+| Discipline | Behavior |
+|---|---|
+| **Strict** (default) | New problems are locked to the active sprint category. No problems from other categories appear until the sprint ends. |
+| **Flexible** | Allows one free-pick per week from any category, while the sprint structure remains otherwise intact. |
+
+Strict discipline is the default and is recommended for users who want the most focused preparation. Flexible is useful if you want occasional variety without fully switching to Random Mode.
+
+### Sprint settings
+
+Three settings control the shape of each sprint. All three are configurable from [Settings](/configuration/settings).
+
+**`targetDays`** (default: `7`)
+
+The number of days allocated to each sprint. The slider in Settings ranges from 3 to 14 days:
+
+| Value | Label | Best for |
+|---|---|---|
+| 3 days | Fast | Very tight timelines, already familiar with the category |
+| 7 days | Balanced | Most users (default) |
+| 14 days | Deep | More practice time per category, learning from scratch |
+
+**`lengthMultiplier`** (default: `1.0`)
+
+Scales sprint length relative to category size. The actual number of days per sprint is calculated as:
+
+```
+sprintDays = categoryProblemCount × lengthMultiplier
+```
+
+| Value | Effect |
+|---|---|
+| `0.75` | Shorter sprints — moves through categories faster |
+| `1.0` | Normal sprint length |
+| `1.25` | Longer sprints — more time per category |
+
+**`strictMode`**
+
+Maps directly to the **Sprint discipline** toggle in the UI. `true` = Strict, `false` = Flexible.
+
+### Jumping to a category
+
+The **Jump to Sprint Category** dropdown in Settings lets you manually advance to any category in Phase 1 or Phase 2. This is useful if you want to skip ahead or revisit a specific category. Jumping resets in-progress sprint state for the target category.
+
+## Random Mode in depth
+
+In Random Mode, LC Tracker iterates through the NeetCode 75 problem list (and then the NeetCode 150 additions) in a fixed order. Each day you receive the next unsolved problem in the list. There is no category grouping, no sprint timer, and no sprint check.
+
+Review scheduling via spaced repetition still applies in Random Mode — problems you have solved continue to resurface for review based on your performance ratings.
+
+## SR aggressiveness
+
+Spaced repetition aggressiveness controls the interval multiplier used when scheduling future reviews. It applies in both Sprint Mode and Random Mode.
+
+| Setting | Intervals | Best for |
+|---|---|---|
+| **Relaxed** (default) | Longer — reviews spread out over more days | Beginners, interviews more than 2 months away |
+| **Aggressive** | Shorter — reviews return sooner for more frequent re-testing | Interviews within 4–6 weeks, fast approaching deadlines |
+
+Switching from Relaxed to Aggressive reschedules upcoming reviews immediately. Problems already in your review queue will be pulled forward.
+
+<AccordionGroup>
+  <Accordion title="Which mode is right for me?">
+    **Choose Sprint Mode if:**
+    - You want structured, systematic coverage of one pattern at a time
+    - You are preparing for FAANG or Fintech interviews that test pattern recognition
+    - You are starting from scratch and need a clear progression path
+    - You want a sprint check to confirm you have internalized the category before moving on
+
+    **Choose Random Mode if:**
+    - You have already covered some categories and want to avoid repeating familiar ground in sequence
+    - You prefer variety in your daily sessions and find single-category drilling monotonous
+    - You are doing a broad review pass before an interview rather than building from the ground up
+
+    **Most users should start with Sprint Mode.** You can always switch to Random Mode later if you want to change your approach.
+  </Accordion>
+  <Accordion title="When should I change SR aggressiveness?">
+    Switch from **Relaxed to Aggressive** when your interview is roughly 4–6 weeks away. More frequent reviews during the final stretch reinforce pattern recall under pressure.
+
+    Stay on **Relaxed** if you have more than 2 months until your interview. Aggressive scheduling too early leads to a heavy review burden that crowds out new problem learning.
+
+    You can switch back and forth as your timeline changes — the scheduler adjusts forward from the moment you save the setting.
+  </Accordion>
+  <Accordion title="What happens to my progress if I switch modes?">
+    Switching modes does not delete any progress. Problems you have already solved remain solved, and their spaced repetition schedules are unchanged. The only thing that changes is which problem appears as your next new problem.
+
+    If you switch from Sprint Mode to Random Mode mid-sprint, the current sprint is paused. If you switch back, you resume from where you left off in that category.
+  </Accordion>
+</AccordionGroup>

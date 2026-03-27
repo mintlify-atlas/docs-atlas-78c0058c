@@ -1,0 +1,81 @@
+---
+title: Quickstart
+description: Create your account, complete onboarding, and start your first problem session in under five minutes.
+---
+
+LC Tracker gives you a spaced-repetition study plan built around your schedule and skill gaps. This guide walks you from sign-up to your first solved problem.
+
+<Steps>
+  <Step title="Create your account">
+    Go to [lc-tracker.app](https://lc-tracker.app) and click **Get Started Free**.
+
+    LC Tracker uses Google OAuth via Clerk — there is no password to set. Click **Continue with Google**, choose your Google account, and you will be redirected back to the app automatically.
+
+    <Note>
+      LC Tracker only requests your basic Google profile (name and email). No access to your Gmail or Drive is requested.
+    </Note>
+  </Step>
+
+  <Step title="Complete onboarding">
+    First-time users are dropped into a 3-step onboarding flow before reaching the dashboard. Onboarding takes about two minutes and sets up your study plan.
+
+    See the [Onboarding guide](/getting-started/onboarding) for a full walkthrough of each step.
+  </Step>
+
+  <Step title="Explore the dashboard">
+    After onboarding you land on the **Dashboard**, which shows your Daily Plan — a curated list of problems to solve or review today based on your schedule and spaced-repetition schedule.
+
+    The sidebar gives you access to all sections of the app:
+
+    <CardGroup cols={2}>
+      <Card title="Dashboard" icon="house" href="https://lc-tracker.app">
+        Your Daily Plan: new problems to solve and past problems due for review, paced to your daily time budget.
+      </Card>
+      <Card title="Problem Library" icon="books" href="https://lc-tracker.app">
+        Browse and filter the full problem set by topic and difficulty. Mark problems as solved, skip them, or retire them.
+      </Card>
+      <Card title="Mock Interview" icon="code" href="https://lc-tracker.app">
+        Practice under timed, interview-like conditions with a randomly selected problem. Results feed back into your spaced-repetition schedule.
+      </Card>
+      <Card title="Syntax Reference" icon="file-code" href="https://lc-tracker.app">
+        Flashcard-style review of language syntax for Python, Java, or JavaScript — useful for warming up before a session.
+      </Card>
+      <Card title="Analytics" icon="chart-line" href="https://lc-tracker.app">
+        Streaks, solve velocity, category breakdowns, and mastery trends so you know where to focus next.
+      </Card>
+      <Card title="Settings" icon="gear" href="https://lc-tracker.app">
+        Edit your study schedule, skill levels, learning mode, target company tier, and more. You can also re-run onboarding from here.
+      </Card>
+    </CardGroup>
+  </Step>
+
+  <Step title="Start your first session">
+    On the Dashboard, find the first problem in your Daily Plan under **Today's problems**. Click **Start Session** on the recommended problem.
+
+    The in-app timer starts automatically. Work through the problem on LeetCode, then come back and rate your solution:
+
+    - **1 — Hard**: struggled or needed to look it up
+    - **2 — Medium**: solved it but not fluently
+    - **3 — Easy**: solved cleanly and confidently
+
+    Your rating determines when the problem resurfaces for review. A rating of 3 two sessions in a row moves the problem toward retirement.
+
+    <Tip>
+      You do not need to solve every problem on the daily plan in one sitting. Completing at least one problem or review per day keeps your streak alive, with one grace day available per week.
+    </Tip>
+  </Step>
+</Steps>
+
+## What happens next
+
+After your first session, LC Tracker schedules that problem for a future review based on spaced repetition. Each day you return, the Dashboard recalculates your plan using:
+
+- Time you have available (weekday or weekend budget from your study schedule)
+- Problems due for review (ordered by urgency)
+- New problems to introduce (based on your skill levels and learning mode)
+
+The more sessions you complete, the more accurate your plan becomes.
+
+<Note>
+  If you connected your LeetCode username during onboarding, recently accepted submissions are auto-marked in your Problem Library. Older solves can be marked manually from the Problem Library tab.
+</Note>

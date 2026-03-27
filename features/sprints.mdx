@@ -1,0 +1,65 @@
+---
+title: Sprints
+description: Understand Sprint Mode, how the sprint lifecycle works, and how Sprint Checks gate your progress through each category.
+---
+
+LC Tracker supports two learning modes: **Sprint Mode** and **Random Mode**. You choose your mode in Settings.
+
+## Sprint Mode vs Random Mode
+
+| Mode | How new problems are selected |
+|------|-------------------------------|
+| **Sprint Mode** | One category at a time; you advance only after passing a Sprint Check |
+| **Random Mode** | Next unsolved problem from the full NeetCode 75 or 150 list |
+
+Sprint Mode is the default and recommended approach. It builds deep pattern recognition before moving on, rather than scattering your attention across all categories at once.
+
+## Phase 1 and Phase 2
+
+Sprints are organized into two phases:
+
+- **Phase 1** covers the NeetCode 75 problem set across 18 categories
+- **Phase 2** covers the extended NeetCode 150 set
+
+**Phase 1 categories (in order):** Arrays & Hashing, Two Pointers, Sliding Window, Stack, Binary Search, Linked List, Trees, Tries, Heap/Priority Queue, Backtracking, Graphs, Advanced Graphs, 1-D DP, 2-D DP, Greedy, Intervals, Math & Geometry, Bit Manipulation
+
+<Note>
+  The Phase 1 milestone triggers when you've solved all 75 NeetCode 75 problems with an average confidence rating of 2.0 or higher. Reaching it unlocks Phase 2 and opens the NeetCode 150 problem set.
+</Note>
+
+## Sprint lifecycle
+
+<Steps>
+  <Step title="Active sprint">
+    You work through problems in the current sprint category. The sidebar shows your sprint day (e.g., Day 3 of 7) and overall progress. New problems on the Daily Plan are drawn exclusively from the active category.
+  </Step>
+  <Step title="Sprint Check (retrospective)">
+    When your sprint days expire, the Daily Plan enters retrospective mode. Today's Focus is replaced by a **Sprint Check** — a single timed problem from your sprint category, solved mock-interview style.
+
+    The time limit is set to 1.5× your average solve time for that category.
+  </Step>
+  <Step title="Pass or extend">
+    After the Sprint Check, you rate your attempt:
+    - **Rating 2 or 3 (pass)** — you advance to the next category
+    - **Rating 1 or timeout (fail)** — the sprint extends by 2 days and you try again
+  </Step>
+  <Step title="Sprint complete">
+    Once you pass the Sprint Check, that category is marked complete and the next sprint begins automatically.
+  </Step>
+</Steps>
+
+## Sprint settings
+
+You can tune sprint behavior in Settings under **Sprint Settings**:
+
+| Setting | Description |
+|---------|-------------|
+| **Strict Mode** | When enabled, you cannot manually skip to the next category until you pass the Sprint Check |
+| **Length Multiplier** | Scales the base sprint length (1.0 = default; 0.75 = shorter; 1.25 = longer) |
+| **Target Days** | Override sprint length to a fixed number of days across all categories |
+
+Base sprint length depends on your skill level for that category (set during onboarding): 7 days for Not Familiar, 4 days for Some Exposure, 2 days for Comfortable.
+
+## Changing the sprint category manually
+
+If you want to jump to a different category — for example, because you already know Arrays & Hashing well — you can use the dropdown in the Sprint card on the Dashboard sidebar. It lists all Phase 1 and Phase 2 categories. Selecting a new category immediately starts a sprint for that category.

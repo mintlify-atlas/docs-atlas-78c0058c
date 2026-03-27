@@ -1,0 +1,58 @@
+---
+title: Syntax reference
+description: Browse syntax cards by language and category, drill weak patterns as flashcards, and track confidence with spaced repetition.
+---
+
+The Syntax Reference tab is a library of syntax cards organized by language and category. Each card covers a common pattern, data structure, or algorithm implementation. You can browse cards, search across descriptions and examples, and launch flashcard sessions to drill your weakest areas.
+
+## Language and category filters
+
+Use the language selector to switch between **Python** and **C++**. Java and JavaScript options appear in the selector but are currently disabled.
+
+Cards are grouped by category within each language. You can jump directly to a category using the anchor links that appear below the filter row. Clicking a category header collapses or expands its cards.
+
+Search across card descriptions, syntax snippets, use cases, and categories using the search bar.
+
+## Flashcard session modes
+
+You can launch a flashcard session three ways:
+
+- **Practice Due** — drills only the cards whose review date has passed. The button shows the count of due cards.
+- **Practice All** — drills every card in the current language, shuffled.
+- **Practice (per category)** — the Practice button next to each category header drills only that category's cards.
+
+All sessions shuffle cards for interleaved practice.
+
+## How to start a flashcard session
+
+<Steps>
+  <Step title="Select your language">
+    Choose **Python** or **C++** from the language dropdown. The card list and due count update immediately.
+  </Step>
+  <Step title="Choose your session type">
+    Click **Practice Due** to work through overdue cards, or use the Practice button next to a specific category to focus on one topic.
+  </Step>
+  <Step title="Rate each card">
+    For each card, reveal the answer and rate your confidence: 1 (didn't know it), 2 (knew it with effort), or 3 (knew it cold).
+  </Step>
+  <Step title="Review stats">
+    After the session, the Practiced and Confident counters in the header update to reflect your progress.
+  </Step>
+</Steps>
+
+## Spaced repetition for syntax cards
+
+Syntax cards use the same SR algorithm as problems. When you rate a card:
+- **Rating 1** — card returns in 2 days
+- **Rating 2** — moderate interval based on consecutive successes
+- **Rating 3** — longer interval; counts toward the card's confident status
+
+Cards with a `nextReviewAt` date that has passed appear in the **Practice Due** queue. Cards you've rated 3 are marked Confident in the stats panel.
+
+## Syntax Drills on the Daily Plan
+
+When syntax cards are due for review, they appear as a **Syntax Drills** section on the Daily Plan. The estimated time shown is approximately 2 minutes per card. Completing them from the Daily Plan navigates you directly to the Syntax Reference tab.
+
+<Tip>
+  Use the **Weak Areas** filter to show only cards you've practiced but rated below 3. This is the fastest way to find the patterns that haven't stuck yet, without scrolling through cards you already know well.
+</Tip>

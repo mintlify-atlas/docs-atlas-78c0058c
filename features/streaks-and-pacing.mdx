@@ -1,0 +1,128 @@
+---
+title: "Streaks and pacing"
+description: "Track your daily consistency with streaks, monitor whether you're on pace to finish Phase 1 by your target date, and use catch-up plans when life gets in the way."
+keywords: ["streak", "pacing", "catch-up", "grace day", "blackout dates", "rest day", "phase 1", "target date"]
+---
+
+LC Tracker tracks two related but separate things: **streaks** (how consistently you show up each day) and **pacing** (whether you're on track to finish Phase 1 by your target interview date). Both are visible on the Dashboard.
+
+## Daily streaks
+
+Your streak increments by one each day you solve or review at least one problem. A day counts as active if your activity log shows a non-zero `solved` or `reviewed` count for that date.
+
+- **Current streak** — consecutive active days up to and including today
+- **Max streak** — your all-time best consecutive day count
+
+Missing a day resets your current streak to zero, but your max streak is never reduced.
+
+### Grace day
+
+You get one grace day per week. When you use a grace day, a shield icon appears next to your streak count. A grace day prevents your streak from resetting if you miss a single day — useful for unexpected disruptions without breaking a long streak.
+
+- Grace days reset each week
+- Only one grace day is available per week
+- A grace day is used automatically when you return after a single missed day (if available)
+
+<Note>
+  The grace day only covers a single missed day. Missing two or more days in a row will still reset your streak even if a grace day is available.
+</Note>
+
+## Pacing
+
+The pacing indicator compares your recent solve rate to the rate you need to finish Phase 1 by your target date. It's displayed as a colored status on the Dashboard.
+
+<Note>
+  Your Phase 1 target date is set in **Settings**. By default it's based on the date you entered during onboarding. You can update it any time.
+</Note>
+
+### How pacing is calculated
+
+LC Tracker uses your last 14 days of activity to estimate your current solve rate. It then simulates forward, skipping rest days and blackout dates, to project when you'd finish at that pace. This projected finish date is compared against your target date.
+
+The required rate accounts for:
+- Problems remaining in the NeetCode 75 (adjusted for your skill levels — comfortable categories count less)
+- Available study days between now and your target date (excluding rest days and blackout periods)
+
+<Tabs>
+  <Tab title="Green — on track">
+    Your projected finish date is on or before your target date.
+
+    **Message:** "On track to finish Phase 1 by [projected date]."
+
+    No action needed. Keep your current pace.
+  </Tab>
+  <Tab title="Yellow — slightly behind">
+    You're behind, but the gap is small — less than one extra problem per study day would close it.
+
+    **Message:** "At current pace you'll finish [projected date]. Solve 1 extra problem every N study days."
+
+    The number of study days between each extra problem is calculated from how far behind you are. A yellow status means you're close — a small adjustment is enough.
+  </Tab>
+  <Tab title="Red — significantly behind">
+    You're behind by enough that you need to solve more than one extra problem per study day.
+
+    **Message:** "At current pace you'll finish [projected date]. Solve N extra problems on study days to hit required pace."
+
+    A red status means meaningful action is required. Consider using a catch-up plan or adjusting your target date.
+  </Tab>
+</Tabs>
+
+## Catch-up plan
+
+If you miss two or more consecutive days, LC Tracker shows a catch-up banner on the Dashboard. You can choose one of two options:
+
+<Steps>
+  <Step title="Notice the catch-up banner">
+    After missing 2+ days, a banner appears the next time you open the Dashboard. It tells you how many days you missed.
+  </Step>
+  <Step title="Choose your plan">
+    You'll see two options:
+
+    - **Extend timeline** — adds the missed days to your Phase 1 deadline, preserving your daily workload
+    - **Catch up faster** — keeps your deadline the same and schedules additional problems per day to make up the gap
+  </Step>
+  <Step title="LC Tracker adjusts your plan">
+    Your choice is saved and affects pacing calculations going forward. If you chose Extend Timeline, the yellow/red pacing thresholds shift based on the new deadline. If you chose Catch Up Faster, your required daily rate increases accordingly.
+  </Step>
+  <Step title="Dismiss when ready">
+    Once a catch-up plan is active, the banner is dismissed and your updated pacing status reflects the new plan. You can update your target date directly in Settings at any time.
+  </Step>
+</Steps>
+
+## What to do if you're behind
+
+<Steps>
+  <Step title="Check your pacing status">
+    Look at the pacing indicator on the Dashboard. Yellow means a small correction is enough; red means a bigger adjustment is needed.
+  </Step>
+  <Step title="Use the catch-up banner if it's showing">
+    If you missed 2+ days, choose between extending your timeline or increasing your daily pace. Both are valid — pick whichever fits your situation.
+  </Step>
+  <Step title="Add a study day">
+    Temporarily reduce your rest day frequency or shorten a blackout period to add available study days back into the calculation.
+  </Step>
+  <Step title="Increase daily minutes">
+    Go to **Settings → Study schedule** and increase your weekday or weekend session minutes. LC Tracker uses your available minutes to calculate how many problems you can solve per day.
+  </Step>
+  <Step title="Adjust your target date">
+    If catching up isn't realistic, update your target interview date in **Settings**. A later date resets the pacing calculation and often moves you back to green immediately.
+  </Step>
+</Steps>
+
+## Blackout dates
+
+Blackout dates are date ranges you mark as unavailable — holidays, travel, exam periods, or anything else. During a blackout period:
+
+- Those days are excluded from available study day counts
+- Pacing calculations skip over them when projecting your finish date
+- Missing those days does not trigger a catch-up banner
+
+Set blackout dates in **Settings → Study schedule**.
+
+## Rest day
+
+Your rest day is one day per week with no study obligation. It defaults to Sunday (day 0) but you can change it in **Settings → Study schedule**.
+
+- Rest days are excluded from pacing calculations
+- Skipping a problem on your rest day does not count as a missed day for streak purposes
+- You can still study on rest days — any activity on those days counts toward your streak and pacing as a bonus
